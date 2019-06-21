@@ -478,6 +478,10 @@ namespace Raven.Server.Documents.ETL.Providers.SQL.RelationalWriters
                                 break;
                             }
                         }
+
+                        if (colParam is Npgsql.NpgsqlParameter p)
+                            p.NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Jsonb;
+
                         colParam.Value = objectValue.ToString();
                         break;
                     case BlittableJsonToken.StartArray:

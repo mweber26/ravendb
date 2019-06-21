@@ -38,12 +38,6 @@ namespace Raven.Server.Documents.ETL.Providers.SQL.RelationalWriters
                     Start = "[",
                     End = "]"
                 };
-            if (factory is NpgsqlFactory)
-                return new DbCommandBuilder
-                {
-                    Start = "\"",
-                    End = "\""
-                };
             return new DbCommandBuilder();
         }
     }
